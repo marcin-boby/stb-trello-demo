@@ -41,15 +41,13 @@ public class OrganisationTest extends BaseTest {
         JsonPath json = response.jsonPath();
         String boardId = json.get("id");
 
-        System.out.println(json.prettyPrint());
-
         assertThat(json.getString("displayName")).isEqualTo(displayName);
 
         deleteElement(ORGANIZATION, boardId);
     }
 
     @Test
-    public void createCorrectOrganisationWitchAllData() {
+    public void createCorrectOrganisationWithAllData() {
 
         Response response = given()
                 .spec(reqSpec)
@@ -67,7 +65,6 @@ public class OrganisationTest extends BaseTest {
         JsonPath json = response.jsonPath();
         String boardId = json.get("id");
 
-        System.out.println(json.prettyPrint());
         assertThat(json.getString("displayName")).isEqualTo(displayName);
         assertThat(json.getString("desc")).isEqualTo(desc);
         assertThat(json.getString("name")).contains("t1_");
@@ -181,6 +178,5 @@ public class OrganisationTest extends BaseTest {
                 .response();
 
         JsonPath json = response.jsonPath();
-        System.out.println(json.prettyPrint());
     }
 }

@@ -15,8 +15,8 @@ public class BaseTest {
     protected static final String CARDS = "cards";
     protected static final String ORGANIZATION = "organizations";
 
-    private static final String KEY = "26d1b136a1a3cbb8dd38faa9ce2f35bd";
-    private static final String TOKEN = "e40616a88790770757b424d0db6d901a30929efa0f7dc5b2579a3c8f0b8839eb";
+    private static final String KEY = "xxx";
+    private static final String TOKEN = "xxx";
 
     protected static RequestSpecBuilder reqBuilder;
     protected static RequestSpecification reqSpec;
@@ -31,7 +31,7 @@ public class BaseTest {
         reqSpec = reqBuilder.build();
     }
 
-    protected static void deleteElement(String element, String elementId){
+    protected static void deleteElement(final String element, String elementId){
         given()
                 .spec(reqSpec)
                 .when()
